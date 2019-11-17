@@ -1,0 +1,491 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Rubik', sans-serif;
+}
+
+header{
+    display: flex;
+    width: 90%;
+    height: 15vh;
+    margin: auto;
+    align-items: center;
+}
+
+.logo,
+.nav-links,
+.atcar{
+    display: flex;
+}
+
+.logo{
+    flex:1;
+   
+}
+
+.logo img {
+    width: 20%;
+}
+.logo-text{
+    font-family: 'Staatliches', cursive;
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-left: 25px;
+    letter-spacing: 3px;
+}
+
+nav{
+    flex:3;  
+}
+
+.burger{
+    display: none;
+    cursor: pointer;
+}
+
+.burger div{
+    width: 27px;
+    height: 4px;
+    background-color: #000;
+    margin: 5px;
+  
+}
+.nav-links{
+    justify-content: flex-end;
+    list-style: none;
+}
+
+.nav-link {
+    color:black;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    margin-right: 50px;
+}
+
+.nav-link:hover{
+    border-bottom: 2px solid #4ba91a;
+    transition: 0.5s;
+}
+.atcar{
+    flex:0;
+    justify-content: flex-end;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.atcar:hover{
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.presentation{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    min-height: 80vh;
+    align-items: center;
+}
+
+.info{
+    flex:1;
+}
+
+.info-text h1{
+    font-family: 'Staatliches', cursive;
+    font-size: 95px;
+    letter-spacing: 10px;
+    background: linear-gradient(to right, #0e0e0f, #4ba91a); /*задаем градиент фон для заголовка Х1*/
+    -webkit-background-clip: text; /*прибиваем цвет фона к тексту*/
+    -webkit-text-fill-color: transparent; /*делаем цвет текста прозрачным, что его наполнил цвет фона*/
+}
+
+/* @media screen and (max-width: 320px){
+    .info-text h1{
+        display: flex;
+        justify-content: center;}
+        .nav-link {
+            margin-right: 15px;
+        }
+} */
+
+.info-text p{
+    margin-top: 10px;
+    font-size: 22px;
+    text-transform: lowercase;
+    color: #585772;
+}
+
+.push{
+    padding: 50px 0 0 0;
+}
+
+.push .select {
+    border: 2px solid #4ba91a;
+    background: transparent;
+    color: #4ba91a;
+    width: 150px;
+    height: 50px;
+    cursor: pointer; /*указатель при наводе мышки*/
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.push .select:hover{
+    background: #4ba91a;
+    color: white;
+    transition: 0.5s;
+    box-shadow: 5px 5px 5px  rgba(0,0,0,0.5);
+}
+
+.push .add{
+    background: #4ba91a;
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    border: none;
+    color: white;
+    margin-left: 30px;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.push .add:hover{
+    border: 2px solid #4ba91a;
+    background: #fff;
+    color: #4ba91a;
+    transition: 0.5s;
+    box-shadow: 5px 5px 5px  rgba(0,0,0,0.5);
+}
+
+.cover{
+    flex:1;
+    height: 45vh;
+}
+
+.cover img{
+    height: 100%;
+    filter: drop-shadow(0px 10px 10px black); /*добавляем тень непосредсвенно к низу фото*/
+    animation: drop 1.5s ease; /*вызываем нижеобозначеную анимацию с помощью свойства анимайшн*/
+}
+
+.backlogo{
+    width: 100%;
+   height: 100vh;
+    position: absolute;
+    top: 0px;
+    right: 150px;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+/* @media screen and (max-width: 320px){
+    .backlogo {width: 100%;
+    position: absolute;
+    top: 80px;
+    left:0;
+    margin: 0 auto;
+    z-index: -1;
+    opacity: 0.3;
+    }
+
+} */
+
+.selector{
+    position: absolute;
+    bottom: 45px;
+    right: 23%;
+
+    display: flex;
+
+    width: 10%;
+    justify-content: space-around;
+
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.center{
+    opacity: 0.65;
+}
+
+/*определяем и обозначаем анимацию*/
+@keyframes drop {
+    0%{ /*в начале анимации*/
+        opacity: 0; /*прозрачность 0*/
+        transform: translateY(-100px); /*старт анимации с отрицательного движения по оси У*/
+    }
+
+    100%{ /*в конце анимации*/
+        opacity: 1; /*прозрачность 100%*/
+        transform: translateY(0); /*конец анимации в месте где обозначено фото*/
+    }
+}
+
+
+/*вызов респонсива
+/* @media screen and (max-width: 1290px) /*макс ширина экрана с нормальным отображением объктов{
+    .presentation{
+        flex-direction: column; /*задаем новые свойства отображения всем елеентам которым это нужно
+    }
+    .info{
+        text-align: center;
+    }
+
+    .cover img {
+        height: 90%;
+        margin-top: 2vh;
+    }
+
+    .backlogo{
+        position: absolute;
+    
+        right: 50px;
+    }
+
+    .selector{
+        right: 45%;
+    }
+}
+/*при необходимости вызывать меди снова с задаванием новой ширины и новых 
+нужных свойств*/
+/*например при ширине 968пх 
+@media screen and (max-width: 968px){
+    .nav-link {
+        margin-right: 15px;
+    }
+
+    .backlogo{
+        position: absolute;
+    
+        right: -100px;
+    }
+} и так далее */
+
+footer{
+    height: 5vh;
+    background: rgba(0,0,0,0.5);
+}
+
+footer p{
+    text-align: center;
+    font-size: 12px;
+    opacity: 0.8;
+    padding-top: 10px;
+}
+
+/*вызов респонсива*/
+ @media screen and (max-width: 1235px) /*макс ширина экрана с нормальным отображением объктов*/{
+    .presentation{
+        flex-direction: column; /*задаем новые свойства отображения всем елеентам которым это нужно*/
+    }
+    .info{
+        text-align: center;
+    }
+
+    .cover img {
+        height: 70vh;
+        margin-top: 2vh;
+    }
+
+
+    .selector{
+       bottom: -130px;
+       right: 200px;
+    }
+}
+
+@media screen and (max-width: 906px) {
+
+
+    .nav-link{
+        display: none;
+    }
+    
+    .burger{
+        float: right;
+        cursor: pointer;
+        opacity: 0.7;
+        margin-right: 15px;
+    }
+
+    .burger:hover{
+        opacity: 1;
+    }
+}
+
+
+
+ @media screen and (max-width: 768px) {
+     header{
+         align-items: center;
+     }
+
+.logo img{
+    width: 35%;
+}
+
+    .logo-text{
+        font-size: 32px;
+        padding-bottom: 23px;
+    }
+
+.nav-link{
+    display: none;
+}
+
+.burger{
+    display: block;
+}
+
+    .presentation{
+        flex-direction: column; 
+        }
+
+    .info{
+        text-align: center;
+    }
+.push .select ,
+.push .add{
+    width: 130px;
+    height: 40px;
+}
+    .cover img {
+        height: 90%;
+        margin-top: 4vh;
+    }
+
+    .backlogo{
+        position: absolute;
+    width: 950px;
+    top: -5px;
+        right: -50px;
+    }
+
+    .selector{
+        bottom: 25px;
+        right: 155px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    header{
+        margin: auto;
+        align-items: center;
+    }
+
+   .logo-text{
+       font-size: 28px;
+       padding-bottom: 23px;
+       letter-spacing: 1px;
+   }
+   
+
+   .presentation{
+       flex-direction: column; 
+       align-items: center;
+  
+    
+       }
+       .info{
+        text-align: center;
+    }
+       .info-text h1{
+           font-size: 70px;
+       }
+   .info-text p{
+       font-style: 18px;
+   }
+
+   .cover img {
+     
+       height: 75%;
+       margin-top: 4vh;
+       margin-left: 50px;
+       
+   }
+
+   .backlogo{
+       position: absolute;
+
+   top: 0px;
+    right: -100px;
+   }
+
+}
+
+@media screen and (max-width: 320px) {
+    header{
+        margin: auto;
+    }
+
+.logo img{
+   width: 30%;
+   height: 85px;
+}
+
+   .logo-text{
+       font-size: 26px;
+       margin-top: 15px;
+       margin-left: 5px;
+   }
+
+.nav-link{
+   display: none;
+}
+
+.burger{
+   display: block;
+   margin-bottom: 21px;
+   
+}
+
+   .presentation{
+       flex-direction: column; 
+       }
+
+   .info{
+       text-align: center;
+   }
+
+   .info-text h1{
+       font-size: 45px;
+   }
+
+.info-text p{
+   font-size: 16px;
+}
+
+.push .select ,
+.push .add{
+   width: 80px;
+   height: 40px;
+   font-size: 14px;
+}
+   .cover img {
+       height: 65%;
+       margin-top: 4vh;
+   }
+
+   .backlogo{
+       position: absolute;
+ 
+   top: 0px;
+       right: -175px;
+   }
+
+   .selector{
+       bottom: 65px;
+       right: 75px;
+   }
+}
+
